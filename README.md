@@ -10,7 +10,8 @@ As a seasoned CQRS/ES developer, I don't expect to learn so much about the patte
 ## Content
 
 [1. Building Your First Event-Sourced Application](./1-BuildingYourFirstEventSourcedApplication/index.md)  
-[2. Separating Read and Write Models](./2-SeparatingReadAndWriteModels/index.md)  
+[2. Separating Read and Write Models](./2-SeparatingReadAndWriteModels/index.md) 
+[3. Enforcing Perimeters with Injectors and Notifiers](./3-EnforcingPerimetersWithInjectorsAndNotifiers/index.md)  
 
 ## Useful commands
 
