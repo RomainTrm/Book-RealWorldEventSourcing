@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+enum SiteType {
+  HQ = 0;
+  OXYGEN_GENERATOR = 1;
+  WATER_GENERATOR = 2;
+  POWER_GENERATOR = 3;
+}
+
+message Point {
+  uint32 x = 1;
+  uint32 y = 2;
+}
+
+message BuildingSpawned {
+  string site_id = 1;
+  string game_id = 2;
+  SiteType site_type = 3;
+  Point location = 4;
+  string player_id = 5;
+  uint64 ticks = 6;
+  uint32 completion_ticks = 7;
+}
+
