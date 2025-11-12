@@ -77,7 +77,7 @@ iex> evt = Calculator.handle_command(%{value: 9_500}, %{cmd: :div, value: 0})
 %{error: :divide_failed}
 ```
 
-> ## Event-Sourcing law: All Events are Immutable and Past Tense
+> ### Event-Sourcing law: All Events are Immutable and Past Tense
 >
 > Every event represents something that actually happened. An event cannot be modified and always refers to something that took place. Modeling the absence of a thing or a thing that didn't actually occur may often seem like a good idea, but doing so can confuse both developers and event processors. Remember that if an error didn't result in some immutable thing happening, it shouldn't be modeled as an event.
 
@@ -111,7 +111,7 @@ Note that the result of the divide by 0 as been ignored. We've produced a "failu
   end
 ```
 
-> ## Event-Sourcing law: Applying a Failure Event Must Always Return the Previous State
+> ### Event-Sourcing law: Applying a Failure Event Must Always Return the Previous State
 >
 > Any attempt to apply a bad, unexpected, or explicitly modeled failure event to an existing state must always return the existing state. Failure events should only indicate that a failed thing occurred in the past, not command rejections.
 

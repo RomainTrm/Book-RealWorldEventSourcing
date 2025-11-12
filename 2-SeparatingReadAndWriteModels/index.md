@@ -19,7 +19,7 @@ iex> Projector.lookup_balance("ABC")
 
 The author suggests that the `apply_event` function should not accept a key separated from the event. His point here is to avoid accidentally modifying the wrong projection. I totally get his point here, though, I don't think this key should always be stored in the event's payload: an event is inside an event stream with an associated unique id, this id must be provided to the *projector* with the event.  
 
-> ## Event-Sourcing law: All Data Required for a Projection Must Be on the Events
+> ### Event-Sourcing law: All Data Required for a Projection Must Be on the Events
 >
 > The event is the *only* source of truth. If code allows a different piece of information to be supplied as a parameter that contradicts information on the event, you can corrupt an entire event stream. As such, all keys, metadata, and payload data must come from events and nowhere else. This is often one of the hardest laws to follow but the penalties for breaking it can be subtle and disastrous.
 
