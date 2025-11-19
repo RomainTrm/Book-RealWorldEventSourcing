@@ -13,6 +13,7 @@ As a seasoned CQRS/ES developer, I don't expect to learn so much about the patte
 [2. Separating Read and Write Models](./2-SeparatingReadAndWriteModels/index.md)  
 [3. Enforcing Perimeters with Injectors and Notifiers](./3-EnforcingPerimetersWithInjectorsAndNotifiers/index.md)  
 [4. Exploring the Saga of the Process Manager](./4-ExploringTheSagaOfTheProcessManager/index.md)  
+[5. Building Event-Sourced Elixir Apps with Commanded](./5-BuildingEventSourcedElixirAppsWithCommanded/index.md)  
 
 ## Useful commands
 
