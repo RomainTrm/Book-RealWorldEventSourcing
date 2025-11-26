@@ -46,13 +46,11 @@ A way to compute our growth rate to obtain the storage space consumed per month:
 
 [*EventStoreDb*](https://www.kurrent.io/) is an open-sourced database that specializes in storing events and real-time streaming.
 
-Install a docker [Event Store](https://hub.docker.com/r/eventstore/eventstore) instance, then run:  
+> Personal note: I've regrouped all the following docker services into a single [docker-compose](../docker-compose.yml) file, run `docker compose up` to start them.
 
-`docker run --name esdb-node -it -p 2113:2113 eventstore/eventstore:latest --insecure --run-projections=All --enable-atom-pub-over-http`
+We can open Event Store's dashboard on [http://localhost:2113/](http://localhost:2113/).  
 
-Then we can open Event Store's dashboard on [http://localhost:2113/](http://localhost:2113/).  
-
-We can add events from the "Stream Browser" page, for example  
+Add events from the "Stream Browser" page, for example  
 
 ```json
 Stream ID: account-ledger
@@ -129,9 +127,7 @@ We'll use [commanded_eventstore_adapter](https://hex.pm/packages/commanded_event
 
 > Note: `commanded_eventstore_adapter` is a Postgres adapter, to run our application with *EventStoreDB* we should use [commanded_extreme_adapter](https://hex.pm/packages/commanded_extreme_adapter).
 
-Now we have to update our [`config.exs`](./lunar_frontiers/config/config.exs) then declare a new [`EventStore`](./lunar_frontiers/lib/lunar_frontiers/event_store.ex) module.
-
-Now run a docker instance of Postgres: `docker run --name elixir-eventstore -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres:14-alpine`  
+Now we have to update our [`config.exs`](./lunar_frontiers/config/config.exs) then declare a new [`EventStore`](./lunar_frontiers/lib/lunar_frontiers/event_store.ex) module.  
 Then we can make a new plugin called `event_store`:  
 
 ```elixir
@@ -145,7 +141,7 @@ The EventStore database has been initialized.
 We can see created tables:  
 
 ```bash
-...> docker exec -it elixir-eventstore psql -U postgres -d eventstore
+...> docker exec -it realworldeventsourcing-eventstorepg-1 psql -U postgres -d eventstore
 psql (14.6)
 Type "help" for help.
 
@@ -247,10 +243,7 @@ The EventStore database has been initialized.
 
 ### Projecting with Redis
 
-Now we'll make our projection durable using a Redis.  
-First of all, add a new docker container: `docker run --name elixir-redis -p 6379:6379 -d redis:latest`  
-
-We install [Redix](https://hex.pm/packages/redix) by adding into [mix.exs](./lunar_frontiers/mix.exs):  
+Now we'll make our projection durable using a Redis. We install [Redix](https://hex.pm/packages/redix) by adding into [mix.exs](./lunar_frontiers/mix.exs):  
 
 ```elixir
 {:redix, "~> 1.5"}
@@ -281,7 +274,7 @@ eventstore=# select stream_uuid from streams;
 Then check Redis content:
 
 ```bash
-...> docker exec -it elixir-redis redis-cli
+...> docker exec -it realworldeventsourcing-redis-1 redis-cli
 127.0.0.1:6379> KEYS *
 1) "sites:px42"
 2) "building:9378ff85-a7ae-4739-9fe9-9744d76f44d0"
