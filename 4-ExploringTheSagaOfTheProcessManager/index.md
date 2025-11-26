@@ -244,7 +244,7 @@ Some major changes in the modeling compared to the previous use case:
 2. Accepts the `AvatarGenerationPassed` and `AvatarGenerationFailed` events.
 3. When both result events are received, emits either `UserProvisioningSucceeded` or `UserProvisioningFailed` events.  
 
-> Note: The author says that *Process Managers* sends commands, then here, without explanation, it says it can return events like an injector.  
+> Personal note: The author says that *Process Managers* sends commands, then here, without explanation, it says it can return events like an injector.  
 > Usually, in such cases I send a command to the aggregate saying "I notify you that something happened" and it emits events.
 
 **Solution is not provided**, following content is my own solution.  
