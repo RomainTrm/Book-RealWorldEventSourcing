@@ -15,6 +15,7 @@ As a seasoned CQRS/ES developer, I don't expect to learn so much about the patte
 [4. Exploring the Saga of the Process Manager](./4-ExploringTheSagaOfTheProcessManager/index.md)  
 [5. Building Event-Sourced Elixir Apps with Commanded](./5-BuildingEventSourcedElixirAppsWithCommanded/index.md)  
 [6. Building Resilient Applications with Event Stores](./6-BuildingResilientApplicationsWithEventStores/index.md)  
+[7. Evolving Event-Sourced Systems](./7-EvolvingEventSourcedSystems/index.md)  
 
 ## Useful commands
 
