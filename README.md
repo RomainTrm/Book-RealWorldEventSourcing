@@ -4,8 +4,8 @@ Personal notes and code exercises from [Real-World Event Sourcing](https://pragp
 
 As a seasoned CQRS/ES developer, I don't expect to learn so much about the pattern by itself, I'm more focus here on:  
 
-- how the author introduces and teaches the concepts
-- how CQRS/ES fits the Elixir's built-in actor model
+- How the author introduces and teaches the concepts?
+- How CQRS/ES fits the Elixir's built-in actor model?
 
 ## Content
 
@@ -16,6 +16,7 @@ As a seasoned CQRS/ES developer, I don't expect to learn so much about the patte
 [5. Building Event-Sourced Elixir Apps with Commanded](./5-BuildingEventSourcedElixirAppsWithCommanded/index.md)  
 [6. Building Resilient Applications with Event Stores](./6-BuildingResilientApplicationsWithEventStores/index.md)  
 [7. Evolving Event-Sourced Systems](./7-EvolvingEventSourcedSystems/index.md)  
+[8. Securing Event-Sourced Applications](./8-SecuringEventSourcedApplications/index.md)  
 
 ## Useful commands
 
