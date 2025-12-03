@@ -17,6 +17,7 @@ As a seasoned CQRS/ES developer, I don't expect to learn so much about the patte
 [6. Building Resilient Applications with Event Stores](./6-BuildingResilientApplicationsWithEventStores/index.md)  
 [7. Evolving Event-Sourced Systems](./7-EvolvingEventSourcedSystems/index.md)  
 [8. Securing Event-Sourced Applications](./8-SecuringEventSourcedApplications/index.md)  
+[9. Testing Event-Sourced Systems](./9-TestingEventSourcedSystems/index.md)  
 
 ## Useful commands
 
