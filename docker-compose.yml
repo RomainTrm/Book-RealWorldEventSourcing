@@ -20,3 +20,14 @@ services:
     image: redis:latest
     ports:
       - 6379:6379
+    
+  nats-cli:
+    image: synadia/nats-server:nightly
+    ports:
+      - 8222:8222
+    command: -js
+    networks: [nats]
+
+networks:
+  nats:
+    name: nats
